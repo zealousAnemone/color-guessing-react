@@ -29,7 +29,10 @@ class App extends React.Component {
     for (let i = 0; i < 9; i++) {
       randomColors.push(this.getRandomColor());
     }
-    this.setState({ randomColors });
+    this.setState({
+      randomColors: randomColors,
+      chosenColor: randomColors[Math.floor(Math.random() * 9)],
+    });
   }
 
   render() {
