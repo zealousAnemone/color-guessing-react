@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header.js";
+import Controls from "./components/Controls.js";
+import GameBoard from "./components/GameBoard.js";
 
-function App() {
+const App = () => {
+  // get random values for RGB
+  const randomR = Math.floor(Math.random() * 255);
+  const randomG = Math.floor(Math.random() * 255);
+  const randomB = Math.floor(Math.random() * 255);
+  const [randomColor, setRandomColor] = useState([randomR, randomG, randomB]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header randomColor={randomColor} />
+      <Controls />
+      <GameBoard />
     </div>
   );
-}
+};
 
 export default App;
