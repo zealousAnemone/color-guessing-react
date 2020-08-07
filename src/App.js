@@ -52,7 +52,7 @@ class App extends React.Component {
           setDifficulty={this.setDifficulty}
           difficulty={this.state.difficulty}
         />
-        <GameBoard />
+        <GameBoard randomColors={this.state.randomColors} />
       </div>
     );
   }

@@ -1,10 +1,10 @@
 import React from "react";
 import ColorSquare from "./ColorSquare.js";
 
-const GameBoard = () => {
+const GameBoard = (props) => {
   let colorSquares = [];
   for (let i = 0; i < 9; i++) {
-    colorSquares.push(<ColorSquare color={Math.random() * 255} />);
+    colorSquares.push(<ColorSquare color={props.randomColors[i]} />);
   }
   return (
     <div>
