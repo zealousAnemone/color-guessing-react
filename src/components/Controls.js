@@ -1,26 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Controls = () => {
-  const [difficulty, setDifficulty] = useState("easy");
-
+const Controls = (props) => {
   return (
     <div>
       <button>New Colors</button>
       <button
         onClick={() => {
-          setDifficulty("easy");
+          props.setDifficulty("easy");
         }}
       >
         Easy
       </button>
       <button
         onClick={() => {
-          setDifficulty("hard");
+          props.setDifficulty("hard");
         }}
       >
         Hard
       </button>
-      <span>Current difficulty: {difficulty}</span>
+      <span>Current difficulty: {props.difficulty}</span>
     </div>
   );
 };
