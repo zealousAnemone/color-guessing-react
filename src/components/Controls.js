@@ -3,7 +3,7 @@ import React from "react";
 const Controls = (props) => {
   return (
     <div>
-      <button>New Colors</button>
+      <button onClick={props.getColors}>New Colors</button>
       <button
         onClick={() => {
           props.setDifficulty("easy");

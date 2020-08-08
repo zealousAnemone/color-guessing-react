@@ -6,12 +6,7 @@ const GameBoard = (props) => {
   for (let i = 0; i < 9; i++) {
     colorSquares.push(<ColorSquare color={props.randomColors[i]} />);
   }
-  return (
-    <div>
-      <h3>GameBoard goes here</h3>
-      {colorSquares}
-    </div>
-  );
+  return <div id="game-board">{colorSquares}</div>;
 };
 
 export default GameBoard;

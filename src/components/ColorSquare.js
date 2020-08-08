@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import "../styles.css";
 
 const ColorSquare = (props) => {
-  return <div>{props.color}</div>;
+  return (
+    <div class="color-square" style={{ backgroundColor: props.color }}></div>
+  );
 };
 
 export default ColorSquare;

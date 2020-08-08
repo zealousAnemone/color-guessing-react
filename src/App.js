@@ -15,6 +15,7 @@ class App extends React.Component {
     };
 
     this.getRandomColor = this.getRandomColor.bind(this);
+    this.getColors = this.getColors.bind(this);
     this.setDifficulty = this.setDifficulty.bind(this);
   }
 
@@ -23,6 +24,19 @@ class App extends React.Component {
     let green = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
     return `rgb(${red}, ${green}, ${blue})`;
+  }
+
+  getColors() {
+    let num;
+    this.state.difficulty === "easy" ? (num = 3) : (num = 6);
+    const randomColors = [];
+    for (let i = 0; i < num; i++) {
+      randomColors.push(this.getRandomColor());
+    }
+    this.setState({
+      randomColors: randomColors,
+      chosenColor: randomColors[Math.floor(Math.random() * num)],
+    });
   }
 
   setDifficulty(diff) {
@@ -34,14 +48,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const randomColors = [];
-    for (let i = 0; i < 9; i++) {
-      randomColors.push(this.getRandomColor());
-    }
-    this.setState({
-      randomColors: randomColors,
-      chosenColor: randomColors[Math.floor(Math.random() * 9)],
-    });
+    this.getColors();
   }
 
   render() {
@@ -50,6 +57,7 @@ class App extends React.Component {
         <Header chosenColor={this.state.chosenColor} />
         <Controls
           setDifficulty={this.setDifficulty}
+          getColors={this.getColors}
           difficulty={this.state.difficulty}
         />
         <GameBoard randomColors={this.state.randomColors} />
