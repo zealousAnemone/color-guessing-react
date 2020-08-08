@@ -38,15 +38,23 @@ button {
   font-size: 1.2em;
 }
 
+button:active {
+  outline: none;
+}
+
+.active {
+  border: 3px solid #f45b69;
+}
+
 #controls {
   border: 2px solid white;
   padding: 18px 0;
   box-shadow: white 3px 3px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 #game-board {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: 180px 180px 180px;
   column-gap: 10px;
   row-gap: 10px;
   justify-content: center;
@@ -55,7 +63,7 @@ button {
 
 .color-square {
   cursor: pointer;
-  height: 200px;
-  width: 200px;
-  border-radius: 10px;
+  height: 180px;
+  width: 180px;
+  border-radius: 15px;
 }

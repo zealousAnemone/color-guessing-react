@@ -5,6 +5,7 @@ const Controls = (props) => {
     <div id="controls">
       <button onClick={props.getColors}>New Colors</button>
       <button
+        className={props.num === 3 ? "active" : null}
         onClick={() => {
           props.setDifficulty("easy");
         }}
@@ -12,6 +13,7 @@ const Controls = (props) => {
         Easy
       </button>
       <button
+        className={props.num === 6 ? "active" : null}
         onClick={() => {
           props.setDifficulty("hard");
         }}

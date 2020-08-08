@@ -3,7 +3,10 @@ import "../styles.css";
 
 const ColorSquare = (props) => {
   return (
-    <div class="color-square" style={{ backgroundColor: props.color }}></div>
+    <div
+      className="color-square"
+      style={{ backgroundColor: props.color }}
+    ></div>
   );
 };
 

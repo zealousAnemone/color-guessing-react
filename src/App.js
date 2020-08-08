@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header.js";
 import Controls from "./components/Controls.js";
 import GameBoard from "./components/GameBoard.js";
+import Footer from "./components/Footer.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class App extends React.Component {
         <Controls
           setDifficulty={this.setDifficulty}
           getColors={this.getColors}
-          difficulty={this.state.difficulty}
+          num={this.state.num}
         />
         <GameBoard
           randomColors={this.state.randomColors}
@@ -65,6 +66,7 @@ class App extends React.Component {
           num={this.state.num}
           won={this.state.won}
         />
+        <Footer />
       </div>
     );
   }
