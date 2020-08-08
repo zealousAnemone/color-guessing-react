@@ -2,7 +2,7 @@ import React from "react";
 
 const Controls = (props) => {
   return (
-    <div>
+    <div id="controls">
       <button onClick={props.getColors}>New Colors</button>
       <button
         onClick={() => {
@@ -18,7 +18,6 @@ const Controls = (props) => {
       >
         Hard
       </button>
-      <span>Current difficulty: {props.difficulty}</span>
     </div>
   );
 };

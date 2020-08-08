@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       randomColors: [],
       chosenColor: null,
-      difficulty: "easy",
+      num: 3,
+      won: false,
     };
 
     this.getRandomColor = this.getRandomColor.bind(this);
@@ -27,23 +28,21 @@ class App extends React.Component {
   }
 
   getColors() {
-    let num;
-    this.state.difficulty === "easy" ? (num = 3) : (num = 6);
     const randomColors = [];
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i < this.state.num; i++) {
       randomColors.push(this.getRandomColor());
     }
     this.setState({
       randomColors: randomColors,
-      chosenColor: randomColors[Math.floor(Math.random() * num)],
+      chosenColor: randomColors[Math.floor(Math.random() * this.state.num)],
     });
   }
 
   setDifficulty(diff) {
     if (diff === "easy") {
-      this.setState({ difficulty: "easy" });
+      this.setState({ num: 3 });
     } else {
-      this.setState({ difficulty: "hard" });
+      this.setState({ num: 6 });
     }
   }
 
@@ -60,7 +59,12 @@ class App extends React.Component {
           getColors={this.getColors}
           difficulty={this.state.difficulty}
         />
-        <GameBoard randomColors={this.state.randomColors} />
+        <GameBoard
+          randomColors={this.state.randomColors}
+          chosenColor={this.state.chosenColor}
+          num={this.state.num}
+          won={this.state.won}
+        />
       </div>
     );
   }
