@@ -19,6 +19,7 @@ class App extends React.Component {
     this.getRandomColor = this.getRandomColor.bind(this);
     this.getColors = this.getColors.bind(this);
     this.setDifficulty = this.setDifficulty.bind(this);
+    this.checkWin = this.checkWin.bind(this);
   }
 
   getRandomColor() {
@@ -34,6 +35,7 @@ class App extends React.Component {
       randomColors.push(this.getRandomColor());
     }
     this.setState({
+      won: false,
       randomColors: randomColors,
       chosenColor: randomColors[Math.floor(Math.random() * this.state.num)],
     });
@@ -44,6 +46,12 @@ class App extends React.Component {
       this.setState({ num: 3 });
     } else {
       this.setState({ num: 6 });
+    }
+  }
+
+  checkWin(color) {
+    if (color === this.state.chosenColor) {
+      this.setState({ won: true });
     }
   }
 
@@ -59,12 +67,13 @@ class App extends React.Component {
           setDifficulty={this.setDifficulty}
           getColors={this.getColors}
           num={this.state.num}
+          won={this.state.won}
         />
         <GameBoard
           randomColors={this.state.randomColors}
           chosenColor={this.state.chosenColor}
           num={this.state.num}
-          won={this.state.won}
+          checkWin={this.checkWin}
         />
         <Footer />
       </div>

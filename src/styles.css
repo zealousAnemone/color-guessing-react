@@ -38,10 +38,6 @@ button {
   font-size: 1.2em;
 }
 
-button:active {
-  outline: none;
-}
-
 .active {
   border: 3px solid #f45b69;
 }
@@ -52,6 +48,16 @@ button:active {
   box-shadow: white 3px 3px;
   margin-bottom: 40px;
 }
+
+span {
+  color: #232323;
+  margin-right: 20px;
+}
+
+.won {
+  color: white;
+}
+
 #game-board {
   display: grid;
   grid-template-columns: 180px 180px 180px;

@@ -6,6 +6,9 @@ const ColorSquare = (props) => {
     <div
       className="color-square"
       style={{ backgroundColor: props.color }}
+      onClick={() => {
+        props.checkWin(props.color);
+      }}
     ></div>
   );
 };
