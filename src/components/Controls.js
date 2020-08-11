@@ -8,7 +8,7 @@ const Controls = (props) => {
       <button
         className={props.num === 3 ? "active" : null}
         onClick={() => {
-          props.setDifficulty("easy");
+          props.setDifficulty(3);
         }}
       >
         Easy
@@ -16,7 +16,7 @@ const Controls = (props) => {
       <button
         className={props.num === 6 ? "active" : null}
         onClick={() => {
-          props.setDifficulty("hard");
+          props.setDifficulty(6);
         }}
       >
         Hard

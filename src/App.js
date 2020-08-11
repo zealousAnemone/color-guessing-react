@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 //import logo from "./logo.svg";
-import "./App.css";
-import Header from "./components/Header.js";
-import Controls from "./components/Controls.js";
-import GameBoard from "./components/GameBoard.js";
-import Footer from "./components/Footer.js";
+import './App.css';
+import Header from './components/Header.js';
+import Controls from './components/Controls.js';
+import GameBoard from './components/GameBoard.js';
+import Footer from './components/Footer.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,12 +41,8 @@ class App extends React.Component {
     });
   }
 
-  setDifficulty(diff) {
-    if (diff === "easy") {
-      this.setState({ num: 3 });
-    } else {
-      this.setState({ num: 6 });
-    }
+  setDifficulty(num) {
+    this.setState({ num });
   }
 
   checkWin(color) {
@@ -61,19 +57,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header chosenColor={this.state.chosenColor} />
+      <div id="main">
+        <Header chosenColor={this.state.chosenColor} won={this.state.won} />
         <Controls
-          setDifficulty={this.setDifficulty}
           getColors={this.getColors}
-          num={this.state.num}
           won={this.state.won}
+          setDifficulty={this.setDifficulty}
+          num={this.state.num}
         />
         <GameBoard
           randomColors={this.state.randomColors}
           chosenColor={this.state.chosenColor}
-          num={this.state.num}
           checkWin={this.checkWin}
+          num={this.state.num}
         />
         <Footer />
       </div>
