@@ -1,19 +1,13 @@
-import React from "react";
-import ColorSquare from "./ColorSquare.js";
+import React from 'react';
+import ColorSquare from './ColorSquare';
 
-const GameBoard = (props) => {
-  let colorSquares = [];
-  for (let i = 0; i < props.num; i++) {
-    colorSquares.push(
-      <ColorSquare
-        chosenColor={props.chosenColor}
-        key={i}
-        color={props.randomColors[i]}
-        checkWin={props.checkWin}
-      />
-    );
-  }
-  return <div id="game-board">{colorSquares}</div>;
+const GameBoard = () => {
+  return (
+    <div>
+      <h1>Game Board</h1>
+      <ColorSquare />
+    </div>
+  );
 };
 
 export default GameBoard;

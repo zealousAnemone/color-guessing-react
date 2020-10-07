@@ -1,16 +1,7 @@
-import React from "react";
-import "../styles.css";
+import React from 'react';
 
-const ColorSquare = (props) => {
-  return (
-    <div
-      className="color-square"
-      style={{ backgroundColor: props.color }}
-      onClick={() => {
-        props.checkWin(props.color);
-      }}
-    ></div>
-  );
+const ColorSquare = () => {
+  return <div>Color Square</div>;
 };
 
 export default ColorSquare;
