@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const colorsSlice = createSlice({
   name: 'colors',
   initialState: {
-    difficulty: 'hard',
+    difficulty: 'easy',
     currentColors: [],
     chosenColor: '',
   },
@@ -22,8 +22,8 @@ const colorsSlice = createSlice({
         state.currentColors.push(color);
       }
     },
-    setDifficulty: (state, action) => {
-      state.difficulty = action.payload;
+    setDifficulty: (state) => {
+      state.difficulty = !state.difficulty;
     },
     chooseColor: (state, action) => {
       state.chosenColor = action.payload;

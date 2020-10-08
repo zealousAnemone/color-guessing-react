@@ -3,7 +3,7 @@ import ColorSquare from './ColorSquare';
 
 const GameBoard = () => {
   return (
-    <div>
+    <div id="game-board">
       <h1>Game Board</h1>
       <ColorSquare />
     </div>
