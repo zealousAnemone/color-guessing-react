@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Header from './components/Header';
 import Controls from './components/Controls';
 import GameBoard from './components/GameBoard';
-import { selectColors, newColors } from './store/reducers/colorsReducer';
+import { newColors, chooseColor } from './store/reducers/colorsReducer';
 
 const App = () => {
   const dispatch = useDispatch();
-  const currentColors = useSelector(selectColors);
 
   useEffect(() => {
     dispatch(newColors());
+    dispatch(chooseColor());
   }, []);
 
   return (
@@ -18,7 +18,6 @@ const App = () => {
       <Header />
       <Controls />
       <GameBoard />
-      {console.log(currentColors)}
     </div>
   );
 };
