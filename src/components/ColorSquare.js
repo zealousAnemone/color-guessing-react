@@ -6,9 +6,12 @@ const ColorSquare = (props) => {
   const chosenColor = useSelector(selectChosenColor);
   const dispatch = useDispatch();
 
+  // NEXT: Make square disappear if not right
+  // NEXT: Make squares and header change color if won
   const checkWin = () => {
     if (chosenColor === props.color) {
-      dispatch(toggleWon());
+      dispatch(toggleWon(true));
+    } else {
     }
   };
   return (

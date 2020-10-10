@@ -4,7 +4,8 @@ import {
   newColors,
   selectDifficulty,
   setDifficulty,
-  selectColors,
+  // selectColors,
+  toggleWon,
   chooseColor,
   selectWon,
 } from '../store/reducers/colorsReducer';
@@ -19,6 +20,7 @@ const Controls = () => {
     <div id="controls">
       <button
         onClick={() => {
+          dispatch(toggleWon(false));
           dispatch(newColors());
           dispatch(chooseColor());
         }}
@@ -29,6 +31,7 @@ const Controls = () => {
       <button
         onClick={() => {
           dispatch(setDifficulty());
+          dispatch(toggleWon(false));
           dispatch(newColors());
           dispatch(chooseColor());
         }}

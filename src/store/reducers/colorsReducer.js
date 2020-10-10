@@ -13,7 +13,7 @@ const colorsSlice = createSlice({
       const temp = [];
       let red, blue, green;
       let diff;
-      state.difficulty === 'easy' ? (diff = 3) : (diff = 9);
+      state.difficulty === 'easy' ? (diff = 3) : (diff = 6);
 
       for (let i = 0; i < diff; i++) {
         red = Math.floor(Math.random() * 255);
@@ -38,8 +38,8 @@ const colorsSlice = createSlice({
           Math.floor(Math.random() * state.currentColors.length)
         ];
     },
-    toggleWon: (state) => {
-      state.won = !state.won;
+    toggleWon: (state, action) => {
+      state.won = action.payload;
     },
   },
 });
