@@ -4,12 +4,16 @@ import {
   newColors,
   selectDifficulty,
   setDifficulty,
+  selectColors,
   chooseColor,
+  selectWon,
 } from '../store/reducers/colorsReducer';
 
 const Controls = () => {
   const dispatch = useDispatch();
   const difficulty = useSelector(selectDifficulty);
+  // const colors = useSelector(selectColors);
+  const won = useSelector(selectWon);
 
   return (
     <div id="controls">
@@ -21,9 +25,12 @@ const Controls = () => {
       >
         New Colors
       </button>
+      <span className="won">{won && 'You Win!'}</span>
       <button
         onClick={() => {
           dispatch(setDifficulty());
+          dispatch(newColors());
+          dispatch(chooseColor());
         }}
       >
         {difficulty === 'easy' ? 'Easy' : 'Hard'}

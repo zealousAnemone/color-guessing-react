@@ -6,9 +6,11 @@ const colorsSlice = createSlice({
     difficulty: 'easy',
     currentColors: [],
     chosenColor: '',
+    won: false,
   },
   reducers: {
     newColors: (state) => {
+      const temp = [];
       let red, blue, green;
       let diff;
       state.difficulty === 'easy' ? (diff = 3) : (diff = 9);
@@ -19,8 +21,9 @@ const colorsSlice = createSlice({
         blue = Math.floor(Math.random() * 255);
 
         let color = `rgb(${red}, ${green}, ${blue})`;
-        state.currentColors.push(color);
+        temp.push(color);
       }
+      state.currentColors = temp;
     },
     setDifficulty: (state) => {
       if (state.difficulty === 'easy') {
@@ -35,13 +38,22 @@ const colorsSlice = createSlice({
           Math.floor(Math.random() * state.currentColors.length)
         ];
     },
+    toggleWon: (state) => {
+      state.won = !state.won;
+    },
   },
 });
 
 export const selectColors = (state) => state.colors.currentColors;
 export const selectDifficulty = (state) => state.colors.difficulty;
 export const selectChosenColor = (state) => state.colors.chosenColor;
+export const selectWon = (state) => state.colors.won;
 
-export const { newColors, setDifficulty, chooseColor } = colorsSlice.actions;
+export const {
+  newColors,
+  setDifficulty,
+  chooseColor,
+  toggleWon,
+} = colorsSlice.actions;
 
 export default colorsSlice.reducer;

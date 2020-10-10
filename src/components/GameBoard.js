@@ -1,13 +1,16 @@
 import React from 'react';
 import ColorSquare from './ColorSquare';
+import { useSelector } from 'react-redux';
+import { selectColors } from '../store/reducers/colorsReducer';
 
 const GameBoard = () => {
-  return (
-    <div id="game-board">
-      <h1>Game Board</h1>
-      <ColorSquare />
-    </div>
-  );
+  const colorGrid = [];
+  const colors = useSelector(selectColors);
+
+  colors.forEach((color) => {
+    colorGrid.push(<ColorSquare color={color} />);
+  });
+  return <div id="game-board">{colorGrid}</div>;
 };
 
 export default GameBoard;
