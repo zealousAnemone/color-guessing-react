@@ -42,8 +42,8 @@ button {
   font-size: 1.2em;
 }
 
-.active {
-  border: 3px solid #f45b69;
+button:hover {
+  box-shadow: #f45b69 4px 3px;
 }
 
 #controls {

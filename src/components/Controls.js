@@ -4,7 +4,7 @@ import {
   newColors,
   selectDifficulty,
   setDifficulty,
-  // selectColors,
+  selectChosenColor,
   toggleWon,
   chooseColor,
   selectWon,
@@ -13,11 +13,19 @@ import {
 const Controls = () => {
   const dispatch = useDispatch();
   const difficulty = useSelector(selectDifficulty);
-  // const colors = useSelector(selectColors);
+  const chosenColor = useSelector(selectChosenColor);
   const won = useSelector(selectWon);
 
+  const style = {
+    backgroundColor: '#232323',
+  };
+
+  if (won) {
+    style.backgroundColor = chosenColor;
+  }
+
   return (
-    <div id="controls">
+    <div id="controls" style={style}>
       <button
         onClick={() => {
           dispatch(toggleWon(false));
