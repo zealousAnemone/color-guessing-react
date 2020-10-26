@@ -20,7 +20,7 @@ const Controls = () => {
     backgroundColor: '#232323',
   };
 
-  if (won) {
+  if (won === 'You Win!') {
     style.backgroundColor = chosenColor;
   }
 
@@ -28,18 +28,18 @@ const Controls = () => {
     <div id="controls" style={style}>
       <button
         onClick={() => {
-          dispatch(toggleWon(false));
+          dispatch(toggleWon(''));
           dispatch(newColors());
           dispatch(chooseColor());
         }}
       >
         New Colors
       </button>
-      <span className="won">{won && 'You Win!'}</span>
+      <span className="won">{won}</span>
       <button
         onClick={() => {
           dispatch(setDifficulty());
-          dispatch(toggleWon(false));
+          dispatch(toggleWon(''));
           dispatch(newColors());
           dispatch(chooseColor());
         }}

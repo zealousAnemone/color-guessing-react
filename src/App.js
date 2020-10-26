@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import Header from './components/Header';
 import Controls from './components/Controls';
 import GameBoard from './components/GameBoard';
+import Footer from './components/Footer';
 import { newColors, chooseColor } from './store/reducers/colorsReducer';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Header />
       <Controls />
       <GameBoard />
+      <Footer />
     </div>
   );
 };

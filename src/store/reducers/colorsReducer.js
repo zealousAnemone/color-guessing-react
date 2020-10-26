@@ -6,7 +6,7 @@ const colorsSlice = createSlice({
     difficulty: 'easy',
     currentColors: [],
     chosenColor: '',
-    won: false,
+    won: '',
   },
   reducers: {
     newColors: (state) => {

@@ -8,7 +8,7 @@ const GameBoard = () => {
   const colors = useSelector(selectColors);
 
   colors.forEach((color) => {
-    colorGrid.push(<ColorSquare color={color} />);
+    colorGrid.push(<ColorSquare color={color} key={color} />);
   });
   return <div id="game-board">{colorGrid}</div>;
 };

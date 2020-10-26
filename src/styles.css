@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Open+Sans&display=swap');
 
 body {
   display: flex;
@@ -6,10 +6,8 @@ body {
   text-align: center;
   margin: 0;
   background-color: #232323;
+  font-family: 'Open Sans', sans-serif;
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
 }
 
 #root {
@@ -86,4 +84,8 @@ span {
   border-top: 2px solid white;
   padding: 40px;
   margin-top: 40px;
+}
+
+a {
+  color: #f45b69;
 }
